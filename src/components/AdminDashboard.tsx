@@ -669,7 +669,7 @@ export default function AdminDashboard() {
                       </td>
                       <td className="p-4">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-xs text-slate-700 font-bold">{user.userId}</span>
+                          <span className="font-mono text-xs text-slate-700 font-bold">xxxxx</span>
                           <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(user.email)}&su=${encodeURIComponent('TaskAI account details')}&body=${encodeURIComponent(`Your TaskAI User ID is: ${user.userId}`)}`}
                             target="_blank"
                             rel="noreferrer"
