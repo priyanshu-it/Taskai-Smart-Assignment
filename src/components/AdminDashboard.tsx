@@ -399,7 +399,7 @@ export default function AdminDashboard() {
 
                 { /* Pending Hold Tasks Notification */}
                 {subtasks.filter(s => s.status === 'hold').length > 0 && (
-                  <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-2xl p-6">
+                  <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-xl p-6">
                     <div className="flex items-start gap-4">
                       <AlertCircle className="text-orange-600 flex-shrink-0 mt-1" size={24} />
                       <div>
@@ -424,7 +424,7 @@ export default function AdminDashboard() {
                 )}
 
                 {overdueReminders.length > 0 && (
-                  <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6">
+                  <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-6">
                     <div className="flex items-start gap-4">
                       <Bell className="text-amber-600 flex-shrink-0 mt-1" size={24} />
                       <div>
@@ -454,7 +454,7 @@ export default function AdminDashboard() {
                     <Users size={20} className="text-blue-600" />
                     Team Overview
                   </h3>
-                  <div className="bg-white border border-slate-200 rounded-2xl overflow-x-auto shadow-sm">
+                  <div className="bg-white border border-slate-200 rounded-xl overflow-x-auto shadow-sm">
                     <table className="w-full text-left border-collapse min-w-[600px]">
                       <thead>
                         <tr className="bg-slate-50">
@@ -572,7 +572,7 @@ export default function AdminDashboard() {
 
         {activeTab === 'users' && (
           <div className="space-y-6">
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-6 flex items-center gap-2 text-slate-900">
                 <Plus size={20} className="text-blue-600" />
                 Add New User
@@ -648,7 +648,7 @@ export default function AdminDashboard() {
               </form>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-2xl overflow-x-auto shadow-sm">
+            <div className="bg-white border border-slate-200 rounded-xl overflow-x-auto shadow-sm">
               <table className="w-full text-left border-collapse min-w-[600px]">
                 <thead>
                   <tr className="bg-slate-50">
@@ -711,7 +711,7 @@ export default function AdminDashboard() {
 
         {activeTab === 'create-task' && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 space-y-6 shadow-sm">
+            <div className="bg-white border border-slate-200 rounded-xl p-6 space-y-6 shadow-sm">
               <Input label="Task Title" value={newTask.title} onChange={v => setNewTask({ ...newTask, title: v })} placeholder="e.g., Build user authentication system" />
               <div className="space-y-2">
                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider ml-1">Description</label>
@@ -735,13 +735,13 @@ export default function AdminDashboard() {
               </div>
               <button onClick={handleAiBreakdown}
                 disabled={loading || !newTask.title || !newTask.description}
-                className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white rounded-2xl font-bold tracking-wide shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white rounded-xl font-bold tracking-wide shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {loading ? <Loader2 className="animate-spin" size={20} /> : <><Sparkles size={20} /> AI Breakdown</>}
               </button>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold mb-6 flex items-center gap-2 text-slate-900">
                 <Sparkles size={20} className="text-purple-600" />
                 AI Suggested Breakdown
@@ -805,7 +805,7 @@ export default function AdminDashboard() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {Object.entries(roleSlots).map(([role, limit]) => (
-                  <div key={role} className="flex items-center justify-between p-3 bg-slate-50 rounded-2xl border border-slate-100">
+                  <div key={role} className="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
                     <span className="text-sm font-bold text-slate-700">{role}</span>
                     <div className="flex items-center gap-3">
                       <button onClick={() => setRoleSlots(prev => ({ ...prev, [role]: Math.max(1, (prev[role] || 0) - 1) }))}
@@ -836,7 +836,7 @@ export default function AdminDashboard() {
 
         {activeTab === 'hold-status' && (
           <div className="space-y-6">
-            <div className="bg-white border border-slate-200 rounded-2xl overflow-x-auto shadow-sm">
+            <div className="bg-white border border-slate-200 rounded-xl overflow-x-auto shadow-sm">
               <table className="w-full text-left border-collapse min-w-[800px]">
                 <thead>
                   <tr className="bg-slate-50 text-center">
@@ -973,7 +973,7 @@ const TaskCard = ({ task, onDelete, onDeleteSubTask }: TaskCardProps) => {
   };
 
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+    <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
       <div className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 cursor-pointer hover:bg-slate-50 transition-colors" onClick={() => setExpanded(!expanded)}>
         <div className="flex-1">
           <div className="flex flex-wrap items-center gap-3 mb-2">
